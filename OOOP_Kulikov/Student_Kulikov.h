@@ -13,7 +13,7 @@ public:
 	Student_Kulikov();
 	friend ifstream& operator>>(ifstream& fin, Student_Kulikov& S);
 	friend istream& operator>>(istream& fin, Student_Kulikov& S);
-	friend ofstream& OutputObjectsFile(ofstream& fout, const Student_Kulikov& S);
+	friend ofstream& operator<<(ofstream& fout, const Student_Kulikov& S);
 	friend ostream& operator<<(ostream& fout, const Student_Kulikov& S);
 	~Student_Kulikov() {}
 };

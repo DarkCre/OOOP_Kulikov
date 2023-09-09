@@ -11,16 +11,16 @@ Student_Kulikov::Student_Kulikov()
 	_StudentID++;
 }
 
-ostream& operator<<(ostream& fout, const Student_Kulikov& St)
+ostream& operator<<(ostream& cout, const Student_Kulikov& St)
 {
 	cout << "Данные студента: " << endl;
 	cout << "Имя: " << St._StudentName << endl
 		<< "Фамилия: " << St._StudentSurname << endl
 		<< "Возраст:: " << St._StudentAge << endl;
-	return fout;
+	return cout;
 }
 
-ofstream& OutputObjectsFile(ofstream& fout, const Student_Kulikov& St)
+ofstream& operator<<(ofstream& fout, const Student_Kulikov& St)
 {
 	fout<< St._ID << endl 
 		<< St._StudentName << endl 
