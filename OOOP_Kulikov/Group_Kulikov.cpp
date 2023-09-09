@@ -8,34 +8,60 @@ void Group_Kulikov::add() {
 }
 
 void Group_Kulikov::vector_output() {
-	for (auto i = Group.begin(); i != Group.end(); ++i)
-	{
-		cout << **i <<endl;
+	if (Group.size() == 0) {
+		cout << "Необходимо сначала добавить студентов в группу!";
+		return;
+	}
+	else {
+		for (auto i = Group.begin(); i != Group.end(); ++i)
+		{
+			cout << **i <<endl;
+		}
 	}
 }
 
 void Group_Kulikov::write_file() {
-	cout << "Введите название файла" << endl;
-	string fname;
-	cin >> fname;
-	fname += ".txt";
-	ofstream fout;
-	fout.open(fname);
-	if (!fout.is_open()) {
-		cout << "Не удалось открыть файл!" << endl;
+	if (Group.size() == 0) {
+		cout << "Необходимо сначала добавить студентов в группу!";
+		return;
 	}
 	else {
-		fout << Group.size()<<endl;
-		for (auto i = Group.begin(); i != Group.end(); ++i)
-		{
-			fout << **i << endl;
+		cout << "Введите название файла" << endl;
+		string fname;
+		cin >> fname;
+		fname += ".txt";
+		ofstream fout;
+		fout.open(fname);
+		if (!fout.is_open()) {
+			cout << "Не удалось открыть файл!" << endl;
 		}
-		cout << "Запишь прошла успешно!" << endl;
+		else {
+			fout << Group.size() << endl;
+			for (auto i = Group.begin(); i != Group.end(); ++i)
+			{
+				fout << **i << endl;
+			}
+			cout << "Запишь прошла успешно!" << endl;
+		}
+		fout.close();
 	}
-	fout.close();
 }
 
 void Group_Kulikov::read_file() {
+	if (Group.size() != 0) {
+		cout << "Группа уже существует, если продолжите она будет удалена." << endl;
+		cout << "Вы хотите продолжить?" << endl
+			<< "Введите 1, если согласны" << endl
+			<< "Введите 0, если хотите вернуться в главное меню: " << endl;
+		int iter;
+		do
+		{
+			cin >> iter;
+		} while (!СheckingValues(iter, cin, 0, 1));
+		if (iter == 0) {
+			return;
+		}
+	}
 	cout << "Введите название файла" << endl;
 	string fname;
 	cin >> fname;
