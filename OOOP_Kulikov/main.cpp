@@ -1,4 +1,4 @@
-#include "Students_Kulikov.h"
+#include "Group_Kulikov.h"
 #pragma once 
 
 bool MainSharedConsole() {
@@ -9,9 +9,10 @@ int main()
 {
 	setlocale(LC_ALL, "rus");
 
-	Students_Kulikov St;
-	cin >> St;
-	cout << St;
+	Group_Kulikov Group;
+	Group.add();
+	Group.add();
+	Group.vector_output();
 	
 	do {
 		cout << endl;

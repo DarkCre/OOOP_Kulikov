@@ -1,8 +1,8 @@
-#include "Students_Kulikov.h"
+#include "Student_Kulikov.h"
 
-int Students_Kulikov::_StudentID = 0;
+int Student_Kulikov::_StudentID = 0;
 
-Students_Kulikov::Students_Kulikov()
+Student_Kulikov::Student_Kulikov()
 {
 	_StudentName = "NoName";
 	_StudentSurname = "NoSurname";
@@ -11,7 +11,7 @@ Students_Kulikov::Students_Kulikov()
 	_StudentID++;
 }
 
-ostream& operator<<(ostream& fout, const Students_Kulikov& St)
+ostream& operator<<(ostream& fout, const Student_Kulikov& St)
 {
 	cout << "Данные студента: " << endl;
 	cout << "Имя: " << St._StudentName << endl
@@ -20,7 +20,7 @@ ostream& operator<<(ostream& fout, const Students_Kulikov& St)
 	return fout;
 }
 
-ofstream& OutputObjectsFile(ofstream& fout, const Students_Kulikov& St)
+ofstream& OutputObjectsFile(ofstream& fout, const Student_Kulikov& St)
 {
 	fout<< St._ID << endl 
 		<< St._StudentName << endl 
@@ -29,7 +29,7 @@ ofstream& OutputObjectsFile(ofstream& fout, const Students_Kulikov& St)
 	return fout;
 }
 
-ifstream& operator>>(ifstream& fin, Students_Kulikov& St)
+ifstream& operator>>(ifstream& fin, Student_Kulikov& St)
 {
 	fin >> St._ID;
 	
@@ -42,7 +42,7 @@ ifstream& operator>>(ifstream& fin, Students_Kulikov& St)
 	return fin;
 }
 
-istream& operator>>(istream& fin, Students_Kulikov& St)
+istream& operator>>(istream& fin, Student_Kulikov& St)
 {
 	do
 	{

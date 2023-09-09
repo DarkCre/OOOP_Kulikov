@@ -129,12 +129,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Checking.cpp" />
+    <ClCompile Include="Group_Kulikov.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Students_Kulikov.cpp" />
+    <ClCompile Include="Student_Kulikov.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Checking.h" />
-    <ClInclude Include="Students_Kulikov.h" />
+    <ClInclude Include="Group_Kulikov.h" />
+    <ClInclude Include="Student_Kulikov.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
